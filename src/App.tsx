@@ -49,7 +49,11 @@ function App() {
 		setXIsNext(true)
 	}
 
-	return <>Hello</>
+	return <>
+	<h1>Tic-Tac-Toe</h1></>
+
+	<Board squares={squares} onClick={handleClick} />
+	<GameInfo status={status} onReset={resetGame} />
 }
 
 export default App
