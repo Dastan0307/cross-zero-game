@@ -21,8 +21,8 @@ function calculateWinner(squares) {
 }
 
 function App() {
-	const [squares, setSquares] = useState(Array(9).fill(null))
-	const [xIsNext, setXIsNext] = useState(true)
+	const [squares, setSquares] = useState<Array<string>>(Array(9).fill(null))
+	const [xIsNext, setXIsNext] = useState<boolean>(true)
 
 	const handleClick = (index: number) => {
 		const newSquares = squares.slice()
