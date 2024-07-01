@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import Board from './components/Board'
+import GameInfo from './components/GameInfo'
 
-function calculateWinner(squares) {
-	const lines = [
+function calculateWinner(squares: (string | number | null)[]): string | null {
+	const lines: number[][] = [
 		[0, 1, 2],
 		[3, 4, 5],
 		[6, 7, 8],
@@ -21,8 +23,8 @@ function calculateWinner(squares) {
 }
 
 function App() {
-	const [squares, setSquares] = useState(Array(9).fill(null))
-	const [xIsNext, setXIsNext] = useState(true)
+	const [squares, setSquares] = useState<(string | null)[]>(Array(9).fill(null));
+	const [xIsNext, setXIsNext] = useState<boolean>(true)
 
 	const handleClick = (index: number) => {
 		const newSquares = squares.slice()
@@ -49,11 +51,13 @@ function App() {
 		setXIsNext(true)
 	}
 
-	return <>
-	<h1>Tic-Tac-Toe</h1></>
-
-	<Board squares={squares} onClick={handleClick} />
-	<GameInfo status={status} onReset={resetGame} />
+	return (
+		<>
+			<h1>Tic-Tac-Toe</h1>
+			<Board squares={squares} onClick={handleClick} />
+			<GameInfo status={status} onReset={resetGame} />
+		</>
+	)
 }
 
 export default App
