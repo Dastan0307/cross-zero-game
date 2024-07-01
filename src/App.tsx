@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import Board from './components/Board'
+import GameInfo from './components/GameInfo'
 
 function calculateWinner(squares) {
 	const lines = [
