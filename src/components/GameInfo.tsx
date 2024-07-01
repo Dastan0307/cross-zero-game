@@ -1,6 +1,11 @@
-import React from 'react'
+import { FC } from 'react'
 
-const GameInfo = ({ status, onReset }) => {
+interface GameInfoProps {
+	status: boolean
+	onReset: () => void;	
+}
+
+const GameInfo: FC<GameInfoProps> = ({ status, onReset }) => {
   return (
 	<div className='game-info'>
 		<div>{status}</div>
